@@ -7,10 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter @Setter @Builder @Data
+@Builder @Data
 public class ClienteFormDto {
 	
 	@NotBlank(message = "O nome do cliente é obrigatório e não pode ser nulo ou vazio.")

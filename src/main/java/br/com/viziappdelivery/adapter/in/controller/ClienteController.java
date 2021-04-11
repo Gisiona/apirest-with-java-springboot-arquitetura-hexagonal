@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.viziappdelivery.core.port.in.dto.ClienteFormDto;
-import br.com.viziappdelivery.core.port.out.dto.ClienteResponseDto;
 import br.com.viziappdelivery.core.port.processor.ClienteProcessor;
 
-//@RequiredArgsConstructor
 @RestController
 @ResponseBody
 @RequestMapping("/cliente")
@@ -36,8 +34,9 @@ public class ClienteController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<ClienteResponseDto> cadastrarCliente(@RequestBody @Valid ClienteFormDto requestCliente){
-		return ResponseEntity.status(HttpStatus.CREATED).body(processor.cadastrar(requestCliente));		
+	public ResponseEntity<?> cadastrarCliente(@RequestBody @Valid ClienteFormDto requestCliente){
+		return ResponseEntity.status(HttpStatus.CREATED).body(requestCliente);
+		//return ResponseEntity.status(HttpStatus.CREATED).body(processor.cadastrar(requestCliente));		
 	}
 	
 }
