@@ -15,15 +15,20 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.viziappdelivery.core.port.in.dto.ClienteFormDto;
 import br.com.viziappdelivery.core.port.out.dto.ClienteResponseDto;
 import br.com.viziappdelivery.core.port.processor.ClienteProcessor;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @RestController
 @ResponseBody
 @RequestMapping("/cliente")
 public class ClienteController {
 
 	private ClienteProcessor processor;
+	
+	@Autowired
+	public ClienteController(ClienteProcessor _processor) {
+		this.processor = _processor;
+	}
+	
 	
 	@GetMapping
 	public String health() {

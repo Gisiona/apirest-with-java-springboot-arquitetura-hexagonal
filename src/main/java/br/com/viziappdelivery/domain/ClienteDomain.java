@@ -2,9 +2,8 @@ package br.com.viziappdelivery.domain;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 
-@Getter @Builder @Data
+@Builder @Data
 public class ClienteDomain {
 
 	private String codigoCliente;
